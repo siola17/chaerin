@@ -16,7 +16,12 @@
                 });
 
                 var callback = function(response) {
-                    console.log(response);
+                    if(response.stats === 'connected'){
+                        document.querySelector('#authBtn').value = 'Logout';
+                    } else {
+                        document.querySelector('#authBtn').value = 'Login'
+                    }
+                    //console.log(response);
                     //statusChangeCallback(response);
                 }
                 FB.getLoginStatus(callback);
