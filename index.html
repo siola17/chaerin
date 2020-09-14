@@ -32,9 +32,18 @@
         </script>
     </head>
     <body>
-        <input type="button" id="authBtn" value="checking...">
+        <input type="button" id="authBtn" value="checking..." onclick="
+            if(this.value === 'Login'){
+                FB.login(function(res){
+                    console.log('login =>', res)
+                });
+            } else {
+                FB.logout(function(res){
+                    console.log('logout =>', res)
+            });
+        ">
         <h1><a href="index.html">WEB</a></h1>
-        <input id="night_day" type="button" value="night" onclick="nightDayHandler(this);">http://localhost:8080/index.html
+        <input id="night_day" type="button" value="night" onclick="nightDayHandler(this);">
         <ol>
             <li><a href="1.html">HTML</a></li>
             <li><a href="2.html">CSS</a></li>
