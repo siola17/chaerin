@@ -16,12 +16,12 @@
                 });
 
                 var callback = function(response) {
+                    console.log(response);
                     if(response.stats === 'connected'){
                         document.querySelector('#authBtn').value = 'Logout';
                     } else {
-                        document.querySelector('#authBtn').value = 'Login'
+                        document.querySelector('#authBtn').value = 'Login';
                     }
-                    //console.log(response);
                     //statusChangeCallback(response);
                 }
                 FB.getLoginStatus(callback);
@@ -30,8 +30,9 @@
             (function(d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
                 if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = "https://connect.facebook.net/en_us/sdk.js"
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://connect.facebook.net/en_us/sdk.js";
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
         </script>
@@ -40,12 +41,13 @@
         <input type="button" id="authBtn" value="checking..." onclick="
             if(this.value === 'Login'){
                 FB.login(function(res){
-                    console.log('login =>', res)
+                    console.log('login =>', res);
                 });
             } else {
                 FB.logout(function(res){
-                    console.log('logout =>', res)
-            });
+                    console.log('logout =>', res);
+                });
+            }
         ">
         <h1><a href="index.html">WEB</a></h1>
         <input id="night_day" type="button" value="night" onclick="nightDayHandler(this);">
@@ -55,9 +57,5 @@
             <li><a href="3.html">JavaScript</a></li>
         </ol>
         <h2>WEB</h2>
-        <p>The world wide web (abbreviated www or the web) is an information space where document</p>
-        <script>
-            document.write("<p>document.URL : " + document.URL + "</p>")
-        </script>
     </body>
 </html>
